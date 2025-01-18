@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Font awesome CSS -->
+        <link rel="stylesheet" href="assets/css/all.min.css" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link
+            rel="shortcut icon"
+            href="./assets/images/icon.png"
+            type="image/png"
+        />
+        <title>Video player</title>
+    </head>
+    <body>
+        <div class="video-container paused" data-volume="high">
+            <!-- Start forward/backward arrows -->
+            <div class="skip-time forward">
+                <div class="forward-icons">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 512"
+                    >
+                        <path
+                            d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
+                        />
+                    </svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 512"
+                    >
+                        <path
+                            d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
+                        />
+                    </svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 512"
+                    >
+                        <path
+                            d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
+                        />
+                    </svg>
+                </div>
+                <div class="skip-sec">5 seconds</div>
+            </div>
+            <div class="play">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                    class="fa-play"
+                >
+                    <path
+                        d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+                    />
+                </svg>
+            </div>
+            <div class="skip-time backward">
+                <div class="backward-icons">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 512"
+                    >
+                        <path
+                            d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
+                        />
+                    </svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 512"
+                    >
+                        <path
+                            d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
+                        />
+                    </svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 512"
+                    >
+                        <path
+                            d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"
+                        />
+                    </svg>
+                </div>
+                <div class="skip-sec">5 seconds</div>
+            </div>
+            <!-- End forward/backward arrows -->
+            <!-- Start controllers -->
+            <img class="thumbnail-img" />
+            <div class="controls-container">
+                <div class="video-timeline-container">
+                    <div class="progress-bar">
+                        <img class="preview-img" />
+                        <div class="thumb-indicator"></div>
+                        <!-- red circle -->
+                    </div>
+                </div>
+                <div class="controllers">
+                    <div class="left-controls">
+                        <!-- Start play/pause button -->
+                        <button class="play-pause-btn">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 384 512"
+                                class="fa-play"
+                            >
+                                <path
+                                    d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+                                />
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512"
+                                class="fa-pause"
+                            >
+                                <path
+                                    d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"
+                                />
+                            </svg>
+                        </button>
+                        <!-- End play/pause button -->
+                        <!-- Start sound icons -->
+                        <div class="sound">
+                            <button class="sound-icons">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 640 512"
+                                    class="fa-volume-high"
+                                >
+                                    <path
+                                        d="M533.6 32.5C598.5 85.3 640 165.8 640 256s-41.5 170.8-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 448 512"
+                                    class="fa-volume-low"
+                                >
+                                    <path
+                                        d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM412.6 181.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 576 512"
+                                    class="fa-volume-xmark"
+                                >
+                                    <path
+                                        d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"
+                                    />
+                                </svg>
+                            </button>
+                            <!-- End sound icons -->
+                            <!-- Start volume bar -->
+                            <input
+                                type="range"
+                                min="0"
+                                max="1"
+                                step="any"
+                                value="1"
+                                class="volume-range"
+                            />
+                            <!-- End volume bar -->
+                        </div>
+                        <!-- Start video timer -->
+                        <div class="video-time">
+                            <div class="current-time">0:00</div>
+                            <span>/</span>
+                            <div class="total-time"></div>
+                        </div>
+                        <!-- End video timer -->
+                    </div>
+                    <div class="right-controls">
+                        <!-- Start captions -->
+                        <div class="caption">
+                            <div role="button" class="caption-btn">
+                                <i class="fa-regular fa-closed-captioning"></i>
+                            </div>
+                            <div class="select-caption">
+                                <p>off</p>
+                            </div>
+                        </div>
+                        <!-- End captions -->
+                        <!-- Start speed -->
+                        <div class="speed" role="button">1x</div>
+                        <!-- End speed -->
+                        <!-- Start miniplayer -->
+                        <button class="mini-player">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    fill="currentColor"
+                                    d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-10-7h9v6h-9z"
+                                />
+                            </svg>
+                        </button>
+                        <!-- End miniplayer -->
+                        <!-- Start theater mode -->
+                        <button class="theater-mode">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="tall"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M19 6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H5V8h14v8z"
+                                />
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="wide"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M19 7H5c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm0 8H5V9h14v6z"
+                                />
+                            </svg>
+                        </button>
+                        <!-- End theater mode -->
+                        <!-- Start full screen -->
+                        <button class="full-screen">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                                class="expand"
+                            >
+                                <path
+                                    d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"
+                                />
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                                class="compress"
+                            >
+                                <path
+                                    d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V64zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32H96v64c0 17.7 14.3 32 32 32s32-14.3 32-32V352c0-17.7-14.3-32-32-32H32zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V64zM320 320c-17.7 0-32 14.3-32 32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H320z"
+                                />
+                            </svg>
+                        </button>
+                        <!-- End full screen -->
+                    </div>
+                </div>
+            </div>
+            <!-- End controllers -->
+            <!-- Project video -->
+            <video preload="metadata">
+                <source
+                    src="./assets/video/The Pursuit Of Happyness_ Job interview.mp4"
+                    type="video/mp4"
+                />
+                <source
+                    src="./assets/video/The Pursuit Of Happyness_ Job interview.webm"
+                    type="video/webm"
+                />
+                <track
+                    label="Arabic"
+                    kind="subtitles"
+                    srclang="ar"
+                    src="./assets/captions/arabic.vtt"
+                />
+                <track
+                    label="French"
+                    kind="subtitles"
+                    srclang="fr"
+                    src="./assets/captions/french.vtt"
+                />
+                <track
+                    label="Italy"
+                    kind="subtitles"
+                    srclang="it"
+                    src="./assets/captions/italy.vtt"
+                />
+                <track
+                    label="Turkish"
+                    kind="subtitles"
+                    srclang="tr"
+                    src="./assets/captions/turkish.vtt"
+                />
+            </video>
+        </div>
+
+        <!-- Font awesome -->
+        <script src="assets/js/all.min.js"></script>
+        <!-- JS -->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
