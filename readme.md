@@ -1,6 +1,6 @@
 ### **Customized Video Player**
 
-**Live demo** [click here]('https://customized-video-player.netlify.app")
+**Live demo** [click here]('https://customized-video.netlify.app")
 
 ![alt text](assets/images/desktop.png)
 
